@@ -1,29 +1,32 @@
 <template>
    <header class="py-3 flex justify-center items-center">
-         <div class="flex justify-between items-center md:container md:mx-auto">
+         <div class="flex justify-between items-center 2xl:container md:mx-auto">
             <div class="cl-logo text-slate-950 font-bold ">
                 <font-awesome-icon class="text-lime-500 dark:text-blue-400"  icon="user-secret" />
             </div>
-            <nav class="flex justify-between items-center">
+            <nav class="flex justify-between items-center bg-slate-200 p-2 rounded-xl">
                 <div class="nav-links duration-500 md:static absolute  md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
                     <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">Discover</a>
+                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">首页</a>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">Marketplace</a>
+                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">动态</a>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">Creator</a>
+                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">文章</a>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">Developers</a>
+                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">相册</a>
+                        </li>
+                        <li>
+                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">留言</a>
                         </li>
                     </ul>
                 </div>
             </nav>
             <div class="flex items-center gap-3 md:gap-5">
-                <button  class="text-white bg-blue-400 py-2 px-2 rounded-full min-w-[100px]">Sign in</button>
+                <a  class="">Sign in</a>
                 <div class="w-9  md:w-12  bg-gray-500 rounded-full overflow-hidden">
                 <img class="w-full h-full object-cover"  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Avatar" />
                 </div>
