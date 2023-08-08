@@ -1284,6 +1284,11 @@ vue-router@4.2.2:
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
+vue3-fullpage@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/vue3-fullpage/-/vue3-fullpage-0.2.0.tgz#baf5d1e005bb718bc2ddfd0ff75e21962f5063c1"
+  integrity sha512-MR3VtxpbijGi3FU9X/v2QVyZmKtcpSfjLotCeytuO+3YVxEchrsEM8z1m2p9Vh989LawofT3yhRQxLR91zmTIg==
+
 vue@^3.3.4:
   version "3.3.4"
   resolved "https://registry.npmjs.org/vue/-/vue-3.3.4.tgz"

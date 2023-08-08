@@ -1,7 +1,7 @@
 <template>
-   <header class="py-3 flex justify-center items-center">
+   <header class="py-3 flex justify-center items-center fixed w-full z-10">
          <div class="flex justify-between items-center 2xl:container md:mx-auto">
-            <div class="cl-logo text-slate-950 font-bold rounded-xl shadow-xl p-2 flex justify-center items-center dark:text-slate-50 dark:bg-slate-700">
+            <div class="cl-logo text-slate-950 font-bold rounded-xl shadow-xl py-2 px-5 flex justify-center items-center dark:text-slate-50 dark:bg-slate-700">
                 <font-awesome-icon class="text-lime-500 dark:text-blue-400 text-lg mr-2"  icon="user-secret" /><span >Logo</span>
             </div>
             <nav class="flex justify-between items-center bg-slate-50 p-2 rounded-xl shadow-xl dark:text-slate-50 dark:bg-slate-700">
