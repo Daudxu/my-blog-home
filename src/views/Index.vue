@@ -1,24 +1,8 @@
 <template>
     <div class="text-white w-full h-full container m-auto">
         <div class="flex justify-center"> 
-            <iframe
-        class="aspect-video"
-        ref="myIframe" 
-        @load="handleIframeLoad"
-        src="http://127.0.0.1:5173/webglplayer/index.html"
-        width="100%"
-        height="100%"
-        frameborder="no"
-        marginwidth="0"
-        marginheight="0"
-        scrolling="no"
-        allowtransparency="true"
-        allowfullscreen='true' 
-        >
-        </iframe>
-
         </div>
-        <button class="bg-slate-400 " @click="handleIClickFullScreen">Full Screen</button>
+        <!-- <button class="bg-slate-400 " @click="handleIClickFullScreen">Full Screen</button> -->
     </div>
 
 </template>
