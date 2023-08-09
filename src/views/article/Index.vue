@@ -16,11 +16,10 @@
                     </div>
                     <ul class="space-y-4">
                         <li class="border p-4 rounded-lg" v-for="n in 13" key="n">
-                        <h3 class="text-xl font-semibold mb-2">Item 1</h3>
-                        <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <span class="text-blue-500 hover:underline cursor-pointer">Read more</span>
+                            <h3 class="text-xl font-semibold mb-2">Item 1</h3>
+                            <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <span class="text-blue-500 hover:underline cursor-pointer">Read more</span>
                         </li>
-              
                     </ul>
                 </div>
 
