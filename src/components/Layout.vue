@@ -6,6 +6,6 @@ import Footer from './Footer.vue'
 <template>
     <Header />
     <slot></slot>
-    <Footer msg="Footer" />
+    <!-- <Footer msg="Footer" /> -->
 </template>
   

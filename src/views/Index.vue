@@ -1,38 +1,157 @@
-<script setup>
-import "vue3-fullpage/styles";
-import { Vue3Fullpage } from "vue3-fullpage";
-import { onMounted } from "vue";
-
-let scene, camera, renderer;
-onMounted(() => {
-    // 创建场景
-		scene = new THREE.Scene();
-    // 相机
-		camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 10000);
-    camera.position.set(1000,500, 5560);
-    // 渲染器
-		renderer = new THREE.WebGLRenderer({
-        alpha: true,
-        antialias: true,//是否执行抗锯齿。默认为false.
-    });
-    renderer.compile(scene, camera)
-		renderer.setSize( window.innerWidth, window.innerHeight );
-		document.body.appendChild( renderer.domElement );
-})
-</script>
-
 <template>
-<vue3-fullpage 
-		disable-classes 
-		class="w-full h-screen overflow-y-auto relative m-0 p-0 snap-y snap-mandatory" 
-		page-class="w-full h-full snap-start" 
-		navigation-class="fixed top-1/2 -translate-y-1/2 right-3 p-4 flex flex-col gap-y-5" 
-		navigation-dot-class="relative flex justify-center items-center p-1.5 overflow-hidden rounded-full cursor-pointer" 
-		navigation-dot-inner-class="bg-blue-100 w-2 h-2  rounded-full"
-	>
-      <section id="introduction">Intro</section>
-      <section id="about-us">About Us</section>
-      <section id="our-clients">Our Clients</section>
-      <section id="contact-us">Contact Us</section>
-	</vue3-fullpage>
-</template>
+	<div id="app">
+		<div class="sections-menu fixed top-[35%] right-7 transform translate-y-1/2">
+			<span class="menu-point w-3 h-3 bg-white block my-4 opacity-60 transition duration-400 ease-in-out cursor-pointer" v-bind:class="{active: activeSection == index}" v-on:click="scrollToSection(index)" v-for="(offset, index) in offsets" v-bind:key="index" v-title="
+		'Go to section ' + (index+1)">
+			</span>
+		</div>
+		<section class="h-screen w-full flex justify-center items-center flex-col bg-blue-400">
+			<h1>Vue.js Fullpage Scroll</h1>
+			<p>by <a href="" target="_blank">webdeasy.de</a></p>
+		</section>
+		<section class="h-screen w-full flex justify-center items-center flex-col text-gray-950">
+			<h1>Section 2</h1>
+			<p>made with <a href="" target="_blank">Vue.js</a></p>
+		</section>
+		<section class="h-screen w-full flex justify-center items-center flex-col text-red-600">
+			<h1>Section 3</h1>
+			<p>works on <span><b>desktop & mobile</b></span> devices</p>
+		</section>
+		<section class="h-screen w-full flex justify-center items-center flex-col text-green-500">
+			<h1>Section 4</h1>
+			<p>tested in all <span><b>modern browsers</b></span></p>
+		</section>
+		<section class="h-screen w-full flex justify-center items-center flex-col text-cyan-600">
+			<h1>Section 5</h1>
+			<p>check the tutorial <a href="" target="_blank">here</a></p>
+		</section>
+	</div>
+  </template>
+  
+  <script setup>
+    import { ref, onMounted, onBeforeUnmount } from 'vue'
+	const inMove = ref(false)
+    const inMoveDelay =  ref(400)
+	const activeSection = ref(0)
+	const offsets = ref([])
+    const touchStartY = ref(0)
+	const calculateSectionOffsets = () => {
+      let sections = document.getElementsByTagName('section');
+      let length = sections.length;
+      
+      for(let i = 0; i < length; i++) {
+        let sectionOffset = sections[i].offsetTop;
+        offsets.value.push(sectionOffset);
+      }
+    }
+  
+	 const handleMouseWheel = (e) => {
+      
+      if (e.wheelDelta < 30 && !inMove.value) {
+        moveUp();
+      } else if (e.wheelDelta > 30 && !inMove.value) {
+        moveDown();
+      }
+        
+      e.preventDefault();
+      return false;
+    }
+   
+    const handleMouseWheelDOM = (e) => {
+      
+      if (e.detail > 0 && !inMove.value) {
+        moveUp();
+      } else if (e.detail < 0 && !inMove.value) {
+        moveDown();
+      }
+      
+      return false;
+    }
+    
+	 const moveDown = () => {
+	  inMove.value = true;
+      activeSection.value--;
+        
+      if(activeSection.value < 0) activeSection.value = offsets.value.length - 1;
+        
+      scrollToSection(activeSection.value, true);
+    }
+    
+	 const moveUp = () => {
+	  inMove.value = true;
+      activeSection.value++;
+        
+      if(activeSection.value > offsets.value.length - 1) activeSection.value = 0;
+        
+      scrollToSection(activeSection.value, true);
+    }
+
+	 const scrollToSection = (id, force = false) => {
+      if(inMove.value && !force) return false;
+      
+      activeSection.value = id;
+      inMove.value = true;
+      
+      let section = document.getElementsByTagName('section')[id];
+      if(section) {
+        document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
+      }
+      
+      setTimeout(() => {
+        inMove.value = false;
+      }, inMoveDelay.value);
+      
+    }
+
+    const touchStart = (e) => {
+      e.preventDefault();
+      
+      touchStartY.value = e.touches[0].clientY;
+    }
+
+    const touchMove = (e) => {
+      if(inMove.value) return false;
+      e.preventDefault();
+      
+      const currentY = e.touches[0].clientY;
+      
+      if(touchStartY.value < currentY) {
+        moveDown();
+      } else {
+        moveUp();
+      }
+      
+      touchStartY.value = 0;
+      return false;
+    }
+
+	onMounted(() => {
+		calculateSectionOffsets();
+		window.addEventListener('DOMMouseScroll', handleMouseWheelDOM);
+		window.addEventListener('mousewheel', handleMouseWheel, { passive: false });
+    
+		window.addEventListener('touchstart', touchStart, { passive: false });
+		window.addEventListener('touchmove', touchMove, { passive: false });
+	})
+
+	onBeforeUnmount(() => {
+		window.removeEventListener('DOMMouseScroll', handleMouseWheelDOM);
+		window.removeEventListener('mousewheel', handleMouseWheel, { passive: false });
+		
+		window.removeEventListener('touchstart', touchStart);
+		window.removeEventListener('touchmove', touchMove);
+	})
+  </script>
+  
+  <style scoped>
+	.sections-menu .menu-point.active {
+		opacity: 1;
+		transform: scale(1.5);
+	}
+
+	.sections-menu .menu-point:hover {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+  </style>
+  
