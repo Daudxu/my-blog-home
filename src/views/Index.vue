@@ -5,23 +5,23 @@
 		'Go to section ' + (index+1)">
 			</span>
 		</div>
-		<section class="h-screen w-full flex justify-center items-center flex-col bg-blue-400">
+		<section class="h-screen w-full flex justify-center items-center flex-col bg-blue-100 dark:bg-blue-900">
 			<h1>Vue.js Fullpage Scroll</h1>
 			<p>by <a href="" target="_blank">webdeasy.de</a></p>
 		</section>
-		<section class="h-screen w-full flex justify-center items-center flex-col text-gray-950">
+		<section class="h-screen w-full flex justify-center items-center flex-col bg-gray-100 dark:bg-gray-900">
 			<h1>Section 2</h1>
 			<p>made with <a href="" target="_blank">Vue.js</a></p>
 		</section>
-		<section class="h-screen w-full flex justify-center items-center flex-col text-red-600">
+		<section class="h-screen w-full flex justify-center items-center flex-col bg-red-600 dark:bg-red-900">
 			<h1>Section 3</h1>
 			<p>works on <span><b>desktop & mobile</b></span> devices</p>
 		</section>
-		<section class="h-screen w-full flex justify-center items-center flex-col text-green-500">
+		<section class="h-screen w-full flex justify-center items-center flex-col bg-green-500 dark:bg-green-900">
 			<h1>Section 4</h1>
 			<p>tested in all <span><b>modern browsers</b></span></p>
 		</section>
-		<section class="h-screen w-full flex justify-center items-center flex-col text-cyan-600">
+		<section class="h-screen w-full flex justify-center items-center flex-col bg-cyan-600 dark:bg-cyan-900">
 			<h1>Section 5</h1>
 			<p>check the tutorial <a href="" target="_blank">here</a></p>
 		</section>

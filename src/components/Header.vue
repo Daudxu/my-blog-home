@@ -11,7 +11,7 @@
                             <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">首页</a>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">动态</a>
+                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">随心说</a>
                         </li>
                         <li>
                             <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">文章</a>
@@ -30,7 +30,7 @@
             </nav>
             <div class="flex items-center gap-3 md:gap-5">
                 <div class="flex justify-center items-center rounded-xl shadow-xl px-5 p-1 dark:text-slate-50 bg-slate-50 dark:bg-slate-700"> 
-                    <a  class="mr-2">Sign in</a>
+                    <!-- <a  class="mr-2 p-1">Sign in</a> -->
                     <div class="w-8 h-8 md:w-8 flex justify-center items-center bg-gray-500 rounded-full overflow-hidden">
                         <font-awesome-icon class="text-lime-500 dark:text-blue-400 text-lg"  icon="user-secret" />
                     </div>
@@ -46,6 +46,7 @@
                    <font-awesome-icon v-if="isShowNavbar" :icon="['far', 'circle-xmark']" class="text-2xl cursor-pointer  text-sky-900 dark:text-white"></font-awesome-icon>
                    <font-awesome-icon v-else :icon="['fas', 'bars']" class="text-2xl cursor-pointer  text-sky-900 dark:text-white"></font-awesome-icon>
                 </div>
+                
             </div>
          </div>
      </header>
