@@ -14,16 +14,16 @@
                             <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/talk">随心说</router-link>
                         </li>
                         <li>
-                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">文章</router-link>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/article">文章</router-link>
                         </li>
                         <li>
-                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">相册</router-link>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/photo-album">相册</router-link>
                         </li>
                         <li>
-                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">项目</router-link>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/project">项目</router-link>
                         </li>
                         <li>
-                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">留言</router-link>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/message-board">留言</router-link>
                         </li>
                     </ul>
                 </div>

@@ -30,22 +30,34 @@ const routes = [
     component: () => import("@/views/base/Forgot.vue"),
   },
   {
-    path: "/developers",
-    name: 'Developers',
-    meta: { isCommonLayout: true },
-    component: () => import("@/views/Developers/Index.vue"),
-  },
-  {
     path: "/talk",
     name: 'Talk',
     meta: { isCommonLayout: true },
     component: () => import("@/views/talk/Index.vue"),
   },
   {
+    path: "/article",
+    name: 'Article',
+    meta: { isCommonLayout: true },
+    component: () => import("@/views/article/Index.vue"),
+  },
+  {
     path: "/photo-album",
     name: 'PhotoAlbum',
     meta: { isCommonLayout: true },
     component: () => import("@/views/photoAlbum/Index.vue"),
+  },
+  {
+    path: "/project",
+    name: 'Project',
+    meta: { isCommonLayout: true },
+    component: () => import("@/views/project/Index.vue"),
+  },
+  {
+    path: "/message-board",
+    name: 'MessageBoard',
+    meta: { isCommonLayout: true },
+    component: () => import("@/views/messageBoard/Index.vue"),
   }
 ];
 const router = createRouter({
