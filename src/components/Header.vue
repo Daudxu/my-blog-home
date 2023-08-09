@@ -8,22 +8,22 @@
                 <div class="nav-links duration-500 md:min-h-fit  left-0 top-[-100%] md:w-auto flex items-center px-5 md:py-2">
                     <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">首页</a>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">首页</router-link>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">随心说</a>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/talk">随心说</router-link>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">文章</a>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">文章</router-link>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">相册</a>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">相册</router-link>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">项目</a>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">项目</router-link>
                         </li>
                         <li>
-                            <a class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" href="#">留言</a>
+                            <router-link class="text-black dark:text-white dark:hover:text-gray-500 hover:text-gray-500" to="/">留言</router-link>
                         </li>
                     </ul>
                 </div>
@@ -46,7 +46,6 @@
                    <font-awesome-icon v-if="isShowNavbar" :icon="['far', 'circle-xmark']" class="text-2xl cursor-pointer  text-sky-900 dark:text-white"></font-awesome-icon>
                    <font-awesome-icon v-else :icon="['fas', 'bars']" class="text-2xl cursor-pointer  text-sky-900 dark:text-white"></font-awesome-icon>
                 </div>
-                
             </div>
          </div>
      </header>

@@ -34,6 +34,18 @@ const routes = [
     name: 'Developers',
     meta: { isCommonLayout: true },
     component: () => import("@/views/Developers/Index.vue"),
+  },
+  {
+    path: "/talk",
+    name: 'Talk',
+    meta: { isCommonLayout: true },
+    component: () => import("@/views/talk/Index.vue"),
+  },
+  {
+    path: "/photo-album",
+    name: 'PhotoAlbum',
+    meta: { isCommonLayout: true },
+    component: () => import("@/views/photoAlbum/Index.vue"),
   }
 ];
 const router = createRouter({

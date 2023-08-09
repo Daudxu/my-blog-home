@@ -6,7 +6,8 @@
 			</span>
 		</div>
 		<section class="h-screen w-full flex justify-center items-center flex-col bg-blue-100 dark:bg-blue-900">
-			<h1>Vue.js Fullpage Scroll</h1>
+
+			<h1 ref="typewriterTarget" class="text-3xl font-sans font-bold text-lime-600 ">Vue.js Fullpage Scroll</h1>
 			<p>by <a href="" target="_blank">webdeasy.de</a></p>
 		</section>
 		<section class="h-screen w-full flex justify-center items-center flex-col bg-gray-100 dark:bg-gray-900">
@@ -29,7 +30,10 @@
   </template>
   
   <script setup>
+	import Typewriter from 'typewriter-effect/dist/core';
+
     import { ref, onMounted, onBeforeUnmount } from 'vue'
+	const typewriterTarget = ref(null)
 	const inMove = ref(false)
     const inMoveDelay =  ref(400)
 	const activeSection = ref(0)
@@ -127,6 +131,11 @@
 
 	onMounted(() => {
 		calculateSectionOffsets();
+		new Typewriter(typewriterTarget.value, {
+			strings: ['Hello, World!', 'Welcome to Vue 3!'],
+			autoStart: true,
+			loop: true,
+		});
 		window.addEventListener('DOMMouseScroll', handleMouseWheelDOM);
 		window.addEventListener('mousewheel', handleMouseWheel, { passive: false });
     
@@ -146,12 +155,12 @@
   <style scoped>
 	.sections-menu .menu-point.active {
 		opacity: 1;
-		transform: scale(1.5);
+		transform: scale(1.2);
 	}
 
 	.sections-menu .menu-point:hover {
 		opacity: 1;
-		transform: scale(1.2);
+		transform: scale(1.1);
 	}
   </style>
   
